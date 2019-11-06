@@ -1,9 +1,9 @@
-let express=require('express')
-let bodyParser=require('body-parser')
-let path=require('path')
+const express=require('express')
+const bodyParser=require('body-parser')
+const path=require('path')
 
-let routes=require('./routes')
-let app=express()
+const routes=require('./routes')
+const app=express()
 
 
 app.use(bodyParser.json())

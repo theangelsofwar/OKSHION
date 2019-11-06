@@ -216,7 +216,7 @@ function checkLogin(userName,password,callback){
     if(!user){
         return callback(null,0)
     }
-    if(password!===user.password){
+    if(password!==user.password){
         return callback(null,0)
     }
     return callback(null,{userId: user.id, name:user.name})

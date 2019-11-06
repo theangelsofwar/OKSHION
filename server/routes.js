@@ -1,6 +1,7 @@
-let route=express.Router()
+const express=require('express')
+const router=express.Router()
 
-let db=require('./db')
+const db=require('./db')
 
 router.get('./listings',function(req,res){
     db.getCurrentListings((error,listings) => {
