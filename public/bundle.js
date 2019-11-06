@@ -4056,7 +4056,7 @@ Object.defineProperty(exports, "__esModule", {
     value: true
 });
 exports.apiGetAllListings = apiGetAllListings;
-exports.apoGetListing = apoGetListing;
+exports.apiGetListing = apiGetListing;
 exports.apiPostListing = apiPostListing;
 exports.apiPostBid = apiPostBid;
 exports.apiCheckLogin = apiCheckLogin;
@@ -4078,7 +4078,7 @@ function apiGetAllListings(cb) {
     });
 }
 
-function apoGetListing(id, cb) {
+function apiGetListing(id, cb) {
     _superagent2.default.get('/listing/' + id).end(function (err, res) {
         if (err) {
             cb(err.message);

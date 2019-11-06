@@ -12,7 +12,7 @@ export function apiGetAllListings(cb){
     })
 }
 
-export function apoGetListing(id,cb){
+export function apiGetListing(id,cb){
     request.get(`/listing/${id}`)
     .end((err,res)=>{
         if(err){
