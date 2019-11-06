@@ -14016,7 +14016,7 @@ function _extends() {
 Object.defineProperty(exports, "__esModule", {
     value: true
 });
-var login = exports.login = function login(id, name) {
+var logIn = exports.logIn = function logIn(id, name) {
     console.log(id, name);
     return {
         type: 'LOG_IN',
@@ -14174,7 +14174,7 @@ function Header(props) {
             { className: 'navbar navbar-inverse navbar-fixed-top' },
             _react2.default.createElement(
                 'div',
-                { clsasName: 'container' },
+                { className: 'container' },
                 _react2.default.createElement(
                     'div',
                     { className: 'navbar-header' },
@@ -14192,7 +14192,7 @@ function Header(props) {
                     ),
                     _react2.default.createElement(
                         'a',
-                        { clssName: 'navBar-brand', href: '#' },
+                        { className: 'navBar-brand', href: '#' },
                         ' OKSHION'
                     )
                 ),
@@ -14202,7 +14202,7 @@ function Header(props) {
                     _react2.default.createElement(
                         'ul',
                         { className: 'nav navbar-nav' },
-                        _react2.default.createElement('li', { clsasName: 'active' })
+                        _react2.default.createElement('li', { className: 'active' })
                     )
                 )
             )
@@ -14365,9 +14365,9 @@ var ListAnItem = function (_React$Component) {
         ),
         _react2.default.createElement(
           'form',
-          { clsasName: 'list-item-container' },
+          { className: 'list-item-container' },
           _react2.default.createElement('input', { className: 'form', type: 'text', placeholder: 'Name', name: 'name', onChange: this.fieldChanged }),
-          _react2.default.createElement('input', { className: 'form', type: 'text', placehoder: 'Description', name: 'description', onChange: this.fieldChanged }),
+          _react2.default.createElement('input', { className: 'form', type: 'text', placeholder: 'Description', name: 'description', onChange: this.fieldChanged }),
           _react2.default.createElement('input', { className: 'form', type: 'text', placeholder: 'Starting Bid', name: 'starting_bid', onChange: this.fieldChanged }),
           _react2.default.createElement(
             _reactDropzone2.default,
@@ -14606,7 +14606,7 @@ var Login = function (_React$Component) {
             var _this2 = this;
 
             evt.preventDefault();
-            apiCheckLogin(this.state, function (err, res) {
+            (0, _api.apiCheckLogin)(this.state, function (err, res) {
                 if (err) return console.log(err);
                 console.log(res);
                 name = res.name;
@@ -14624,7 +14624,7 @@ var Login = function (_React$Component) {
                 _react2.default.createElement(
                     'form',
                     { onSubmit: this.handleSubmit.bind(this) },
-                    _react2.default.createElement('input', { type: 'text', placehoder: 'username', name: 'userName', onChange: this.handleChange.bind(this) }),
+                    _react2.default.createElement('input', { type: 'text', placeholder: 'username', name: 'userName', onChange: this.handleChange.bind(this) }),
                     _react2.default.createElement('input', { type: 'password', placeholder: 'password', name: 'password', onChange: this.handleChange.bind(this) }),
                     _react2.default.createElement(
                         'button',
@@ -14641,19 +14641,9 @@ var Login = function (_React$Component) {
 
 function mapDispatchToProps(dispatch) {
     return {
-        logIn: function (_logIn) {
-            function logIn(_x, _x2) {
-                return _logIn.apply(this, arguments);
-            }
-
-            logIn.toString = function () {
-                return _logIn.toString();
-            };
-
-            return logIn;
-        }(function (name, id) {
-            dispatch(logIn(id, name));
-        })
+        logIn: function logIn(name, id) {
+            dispatch((0, _actions.logIn)(id, name));
+        }
     };
 }
 
@@ -14739,7 +14729,7 @@ var ViewItemAndBid = function (_React$Component) {
                 ),
                 _react2.default.createElement(
                     'div',
-                    { clssName: 'col-md-6' },
+                    { className: 'col-md-6' },
                     _react2.default.createElement(
                         'div',
                         { className: 'item-title' },

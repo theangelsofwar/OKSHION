@@ -1,4 +1,4 @@
-export const login=(id,name) => {
+export const logIn=(id,name) => {
     console.log(id,name)
     return {
         type: 'LOG_IN',

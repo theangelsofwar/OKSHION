@@ -33,7 +33,7 @@ export default class ViewItemAndBid extends React.Component{
                         <img src={this.state.listing.picture_url} classname='width'/>
                     </div>
                 </div>
-                <div clssName='col-md-6'>
+                <div className='col-md-6'>
                     <div className='item-title'><h2>{this.state.listing.name}</h2></div>
                     <div className='submitted-by'><p><b>Submitted By:</b><br></br>{this.state.listing.user_name}</p></div>
                     <div className='description'><p><b>Description:</b><br></br>{this.state.listing.description}</p></div>

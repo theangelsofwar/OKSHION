@@ -4,9 +4,14 @@
     border: 1px rgb(131, 76, 138) solid;
     border-radius: 50%;
   }
+
+  body{
+    background-image:url("https://i.pinimg.com/564x/3c/63/45/3c63455a15de9a70d653cb24cf0db8a0.jpg");
+  }
   
   .starter-template {
       padding: 80px 15px;
+
   }
   .header {
     margin-bottom: 20px;
@@ -40,6 +45,8 @@
     cursor: pointer;
   }
   .list-item-container {
+    /* background-image:("https://i.pinimg.com/564x/3c/63/45/3c63455a15de9a70d653cb24cf0db8a0.jpg"); */
+
     display: flex;
     flex-direction: column;
   }

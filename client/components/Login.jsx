@@ -1,7 +1,7 @@
 import React from 'react'
 import {connect} from 'react-redux'
-import {login} from '../actions/'
-import {apickLogin} from '../api/'
+import {logIn} from '../actions/'
+import {apiCheckLogin} from '../api/'
 
 let name
 let id
@@ -35,7 +35,7 @@ class Login extends React.Component{
         return(
             <div>
                 <form onSubmit={this.handleSubmit.bind(this)}>
-                    <input type="text"placehoder="username" name="userName" onChange={this.handleChange.bind(this)}/>
+                    <input type="text"placeholder="username" name="userName" onChange={this.handleChange.bind(this)}/>
                     <input type="password" placeholder="password" name="password" onChange={this.handleChange.bind(this)} />
                     <button> Login</button>
                 </form>

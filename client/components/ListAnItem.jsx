@@ -69,9 +69,9 @@ class ListAnItem extends React.Component{
       return (
         <div>
           <h2 className='form-header'> Add a new item </h2>
-          <form clsasName='list-item-container'>
+          <form className='list-item-container'>
             <input className='form' type='text' placeholder='Name' name='name' onChange={this.fieldChanged}/>
-            <input className='form' type='text' placehoder='Description' name='description' onChange={this.fieldChanged}/>
+            <input className='form' type='text' placeholder='Description' name='description' onChange={this.fieldChanged}/>
             <input className='form' type='text' placeholder='Starting Bid' name='starting_bid' onChange={this.fieldChanged}/>
             <Dropzone 
               multiple={false}

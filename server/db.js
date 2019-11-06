@@ -89,7 +89,7 @@ function getUserListings(userId,callback){
 }
 
 function addListing(listingData,userId,callback){
-    console.log(listingData,useId,'params')
+    console.log(listingData,userId,'params')
     userId=Number(userId)
     console.log(userId)
     let user=data.users.find(user => user.id===userId)
