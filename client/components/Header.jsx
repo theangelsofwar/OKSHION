@@ -29,8 +29,20 @@ function Header(props){
                 </div>
             </nav>
             <div className="header">
-                <h1> Welcome to OKSHION, may the bids be ever in your favor</h1>
+                <h1> Welcome to OKSHION, {props.name} , may the bids be ever in your favor</h1>
+                <Link to="/viewListings/" className='btn btn-default'>View List</Link>
+                <Link to={`/listitem`} className='btn btn-default'> List an Item</Link>
+                <Login />
             </div>
         </div>
     )
 }
+
+function mapStateToProps(state){
+    return {
+        name:state.loggedIn.name
+    
+    }
+}
+
+export default connect(mapStateToProps)(Header)
