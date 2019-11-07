@@ -1,4 +1,4 @@
-const loggedIn=(state={name: 'anonymous',userId:1},action)=>{
+const loggedIn=(state={name: 'AI',userId:1},action)=>{
     switch(action.type){
         case 'LOG_IN':
             return {name: action.name, userId:action.id

@@ -14213,7 +14213,7 @@ function Header(props) {
             _react2.default.createElement(
                 'h1',
                 null,
-                ' Welcome to OCSHION, ',
+                ' Welcome to OCSHION user: ',
                 props.name,
                 ' ,',
                 _react2.default.createElement('p', null),
@@ -14921,7 +14921,7 @@ var App = function (_React$Component) {
         value: function render() {
             return _react2.default.createElement(
                 'div',
-                { className: 'sss' },
+                { className: 'app' },
                 _react2.default.createElement(_Header2.default, { routeProps: this.props }),
                 _react2.default.createElement(_reactRouterDom.Route, { path: './viewListings/', component: _Listings2.default }),
                 _react2.default.createElement(_reactRouterDom.Route, { path: '/viewListing/:id', component: _ViewItemAndBid2.default }),
@@ -14984,7 +14984,7 @@ Object.defineProperty(exports, "__esModule", {
     value: true
 });
 var loggedIn = function loggedIn() {
-    var state = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : { name: 'anonymous', userId: 1 };
+    var state = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : { name: 'AI', userId: 1 };
     var action = arguments[1];
 
     switch (action.type) {

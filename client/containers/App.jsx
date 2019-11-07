@@ -12,7 +12,7 @@ class App extends React.Component{
     }
     render(){
         return (
-            <div className="sss">
+            <div className="app">
                 <Header routeProps={this.props}/>
                 <Route path={'./viewListings/'} component={Listings}/>
                 <Route path={'/viewListing/:id'} component={ViewItemAndBid}/>

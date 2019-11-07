@@ -69,7 +69,7 @@ router.get('/user/:userId/watching',function(req,res){
 
 router.post('/listings/bid/:listingId/:userId',function(req,res){
     console.log(req)
-    db.addBid(req.body.bidAmount,req.params.userId,req.params.listingId,(error,BiquadFilterNode) => {
+    db.addBid(req.body.bidAmount,req.params.userId,req.params.listingId,(error,bidId) => {
         if(error){
             return res.json({error})
         }

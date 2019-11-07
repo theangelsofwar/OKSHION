@@ -13,7 +13,7 @@ const listings = [
   },
   {
     id: 2,
-    name: "Tyga's Listing",
+    name: "Kanye's Listing",
     description: 'This is another description',
     picture_url: 'https://i.pinimg.com/564x/9a/90/97/9a909774449dbb636342b4ded8ebb420.jpg',
     starting_bid: 50,
@@ -35,9 +35,9 @@ const listings = [
   },
   {
     id: 4,
-    name: "Luke's other other listing",
-    description: 'This is another another description',
-    picture_url: '',
+    name: "Naomi's Listing",
+    description: 'Modern Lisa',
+    picture_url: 'https://i.pinimg.com/564x/9f/b5/0a/9fb50a24315ce3d8816fda0cc4297048.jpg',
     starting_bid: 200,
     user_id: 1,
     start_date: new Date(d.getFullYear(), d.getMonth(), d.getDate() - 8, d.getHours(), d.getMinutes(), d.getSeconds()),
@@ -46,9 +46,9 @@ const listings = [
   },
   {
     id: 5,
-    name: "Jules's listing",
-    description: 'This is yet another description',
-    picture_url: '',
+    name: "Gallery listing",
+    description: 'Art Gallery',
+    picture_url: 'https://i.pinimg.com/564x/0b/30/80/0b3080fab5d444a7c4ab55687829c083.jpg',
     starting_bid: 40,
     user_id: 5,
     start_date: new Date(d.getFullYear(), d.getMonth(), d.getDate() - 3, d.getHours(), d.getMinutes(), d.getSeconds()),
@@ -59,7 +59,7 @@ const listings = [
     id: 6,
     name: 'Expired Listing',
     description: 'This has expired',
-    picture_url: '',
+    picture_url: 'https://i.pinimg.com/564x/31/d8/3a/31d83af661c9ecfe103783a78b32b427.jpg',
     starting_bid: 50,
     user_id: 1,
     start_date: new Date(d.getFullYear(), d.getMonth(), d.getDate() - 15, d.getHours(), d.getMinutes(), d.getSeconds()),
@@ -68,9 +68,9 @@ const listings = [
   },
   {
     id: 7,
-    name: 'Listing Sam Won',
-    description: 'Congratulations Sam',
-    picture_url: '',
+    name: 'Listing Karl Won',
+    description: 'Congratulations Zane',
+    picture_url: 'https://i.pinimg.com/564x/25/22/c3/2522c33dec1ae8a65aa16dedf79a2cac.jpg',
     starting_bid: 60,
     user_id: 5,
     start_date: new Date(d.getFullYear(), d.getMonth(), d.getDate() - 14, d.getHours(), d.getMinutes(), d.getSeconds()),
@@ -82,38 +82,38 @@ const listings = [
 const users = [
   {
     id: 1,
-    user_name: 'luke',
-    name: 'Luke',
-    password: 'luke',
-    email: 'luke@luke.lu.ke'
+    user_name: 'Naomi',
+    name: 'Naomi',
+    password: 'Naomi',
+    email: 'naomi@naom.na.om'
   },
   {
     id: 2,
-    user_name: 'jae',
-    name: 'Jae',
-    password: 'jae',
-    email: 'jae@jae.ja.e'
+    user_name: 'Kanye',
+    name: 'Kanye',
+    password: 'Kanye',
+    email: 'kanye@kanye.kan.ye'
   },
   {
     id: 3,
-    user_name: 'jack',
-    name: 'Jack',
-    password: 'jack',
-    email: 'jack@jack.ja.ck'
+    user_name: 'Karl',
+    name: 'Karl',
+    password: 'Karl',
+    email: 'karl@karl.ka.rk'
   },
   {
     id: 4,
-    user_name: 'sam',
-    name: 'Sam',
-    password: 'sam',
-    email: 'sam@sam.sa.m'
+    user_name: 'Post',
+    name: 'Post',
+    password: 'Post',
+    email: 'post@post.po.s'
   },
   {
     id: 5,
-    user_name: 'jules',
-    name: 'Jules',
-    password: 'jules',
-    email: 'jules@jules.jul.es'
+    user_name: 'Zane',
+    name: 'Zane',
+    password: 'Zane',
+    email: 'zane@zane.zan.e'
   }
 ]
 
