@@ -7,11 +7,11 @@ class Listings extends React.Component{
         this.state={
             items:[]
         }
-        this.viewisting=this.viewListing.bind(this);
+        this.viewListing=this.viewListing.bind(this);
     }
 
     componentDidMount(){
-        apieGetAllListings((err,items)=>{
+        apiGetAllListings((err,items)=>{
             console.log(itmems)
             this.setState({
                 items:items.listings
@@ -21,8 +21,10 @@ class Listings extends React.Component{
     }
 
     viewListing(id){
-        this.props.history.push(`/viewlisting/${id}`)
+        this.props.history.push(`./listings`)
     }
+
+
 
 
     render(){
@@ -35,8 +37,8 @@ class Listings extends React.Component{
                             <div key={key} className="listing">
                                 <img src={item.picture_url} />
                                 <h2 onClick={e => this.viewListing(item.id)}>{item.name}</h2>
-                                <p> Curent bid: {item.current_bid}</p>
-                                <p> Auction finished {new Date(item.finish_date).toLocaleTimeString('en-GB')+'\n' +new Date(item.finish_date).toLocaleDateString('en-GB')}</p>
+                                <p> Current bid: {item.current_bid}</p>
+                                <p> Aution finished {new Date(item.finish_date).toLocaleTimeString('en-GB')+'\n' +new Date(item.finish_date).toLocaleDateString('en-GB')}</p>
                             </div>
                         )
                     })}

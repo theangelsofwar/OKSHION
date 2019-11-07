@@ -6,7 +6,13 @@
   }
 
   body{
+   
+    color: lightslategrey;
     background-image:url("https://i.pinimg.com/564x/3c/63/45/3c63455a15de9a70d653cb24cf0db8a0.jpg");
+  }
+
+  .nav-bar-brand{
+    color:whitesmoke
   }
   
   .starter-template {
@@ -14,6 +20,7 @@
 
   }
   .header {
+    color: lightslategrey;
     margin-bottom: 20px;
   }
   .listings-container {
@@ -64,10 +71,11 @@
   }
   
   .form-header {
+    color:whitesmoke;
     font-size: 40px;
   }
   img {
-    border:10px solid #000000;
+    border:17px solid #130613;
   }
   img.width {
     max-width:500px;

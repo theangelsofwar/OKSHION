@@ -14191,7 +14191,7 @@ function Header(props) {
                         _react2.default.createElement('span', { className: 'icon-bar' })
                     ),
                     _react2.default.createElement(
-                        'a',
+                        'div',
                         { className: 'navBar-brand', href: '#' },
                         ' OKSHION'
                     )
@@ -14215,7 +14215,9 @@ function Header(props) {
                 null,
                 ' Welcome to OKSHION, ',
                 props.name,
-                ' , may the bids be ever in your favor'
+                ' ,',
+                _react2.default.createElement('p', null),
+                ' may the bids be ever in your favor'
             ),
             _react2.default.createElement(
                 _reactRouterDom.Link,
@@ -14470,7 +14472,7 @@ var Listings = function (_React$Component) {
         _this.state = {
             items: []
         };
-        _this.viewisting = _this.viewListing.bind(_this);
+        _this.viewListing = _this.viewListing.bind(_this);
         return _this;
     }
 
@@ -14479,7 +14481,7 @@ var Listings = function (_React$Component) {
         value: function componentDidMount() {
             var _this2 = this;
 
-            apieGetAllListings(function (err, items) {
+            (0, _api.apiGetAllListings)(function (err, items) {
                 console.log(itmems);
                 _this2.setState({
                     items: items.listings
@@ -14490,7 +14492,7 @@ var Listings = function (_React$Component) {
     }, {
         key: 'viewListing',
         value: function viewListing(id) {
-            this.props.history.push('/viewlisting/' + id);
+            this.props.history.push('./listings');
         }
     }, {
         key: 'render',
@@ -14523,13 +14525,13 @@ var Listings = function (_React$Component) {
                             _react2.default.createElement(
                                 'p',
                                 null,
-                                ' Curent bid: ',
+                                ' Current bid: ',
                                 item.current_bid
                             ),
                             _react2.default.createElement(
                                 'p',
                                 null,
-                                ' Auction finished ',
+                                ' Aution finished ',
                                 new Date(item.finish_date).toLocaleTimeString('en-GB') + '\n' + new Date(item.finish_date).toLocaleDateString('en-GB')
                             )
                         );
@@ -14724,7 +14726,7 @@ var ViewItemAndBid = function (_React$Component) {
                     _react2.default.createElement(
                         'div',
                         { className: 'image' },
-                        _react2.default.createElement('img', { src: this.state.listing.picture_url, classname: 'width' })
+                        _react2.default.createElement('img', { src: this.state.listing.picture_url, className: 'width' })
                     )
                 ),
                 _react2.default.createElement(
@@ -14782,11 +14784,7 @@ var ViewItemAndBid = function (_React$Component) {
                                 null,
                                 ' Starting Bid:'
                             ),
-                            _react2.default.createElement(
-                                'br',
-                                null,
-                                ' '
-                            ),
+                            _react2.default.createElement('br', null),
                             this.state.listing.start_bid
                         )
                     ),

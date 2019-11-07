@@ -30,14 +30,14 @@ export default class ViewItemAndBid extends React.Component{
             <div className='row view-item-bid'>
                 <div className='col-md-6'>
                     <div className='image'>
-                        <img src={this.state.listing.picture_url} classname='width'/>
+                        <img src={this.state.listing.picture_url} className='width'/>
                     </div>
                 </div>
                 <div className='col-md-6'>
                     <div className='item-title'><h2>{this.state.listing.name}</h2></div>
                     <div className='submitted-by'><p><b>Submitted By:</b><br></br>{this.state.listing.user_name}</p></div>
                     <div className='description'><p><b>Description:</b><br></br>{this.state.listing.description}</p></div>
-                    <div className='starting-bid'> <p> <b> Starting Bid:</b><br> </br>{this.state.listing.start_bid}</p></div>
+                    <div className='starting-bid'> <p> <b> Starting Bid:</b><br></br>{this.state.listing.start_bid}</p></div>
                     <div className='bid-listing'>
                         <table className='table table-striped'> 
                             <thead>
