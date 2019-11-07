@@ -14193,7 +14193,7 @@ function Header(props) {
                     _react2.default.createElement(
                         'div',
                         { className: 'navBar-brand', href: '#' },
-                        ' OKSHION'
+                        ' OCSHION'
                     )
                 ),
                 _react2.default.createElement(
@@ -14213,7 +14213,7 @@ function Header(props) {
             _react2.default.createElement(
                 'h1',
                 null,
-                ' Welcome to OKSHION, ',
+                ' Welcome to OCSHION, ',
                 props.name,
                 ' ,',
                 _react2.default.createElement('p', null),
@@ -14531,7 +14531,7 @@ var Listings = function (_React$Component) {
                             _react2.default.createElement(
                                 'p',
                                 null,
-                                ' Aution finished ',
+                                ' Auction finished ',
                                 new Date(item.finish_date).toLocaleTimeString('en-GB') + '\n' + new Date(item.finish_date).toLocaleDateString('en-GB')
                             )
                         );
@@ -14631,7 +14631,7 @@ var Login = function (_React$Component) {
                     _react2.default.createElement(
                         'button',
                         null,
-                        ' Login'
+                        ' Login '
                     )
                 )
             );
@@ -14984,7 +14984,7 @@ Object.defineProperty(exports, "__esModule", {
     value: true
 });
 var loggedIn = function loggedIn() {
-    var state = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : { name: 'anonymous', userId: 0 };
+    var state = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : { name: 'anonymous', userId: 1 };
     var action = arguments[1];
 
     switch (action.type) {

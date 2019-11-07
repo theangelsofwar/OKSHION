@@ -5,7 +5,7 @@ function Listings (props){
     console.log(props)
     return(
         <div> 
-            <button onClick={() => {TextDecoderStream(props)}}> test </button>
+            <button onClick={() => {test(props)}}> test </button>
         </div>
     )
 }

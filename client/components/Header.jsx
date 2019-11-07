@@ -19,7 +19,7 @@ function Header(props){
                             <span className="icon-bar"></span>
                             <span className="icon-bar"></span>
                         </button>
-                        <div className="navBar-brand" href="#"> OKSHION</div>
+                        <div className="navBar-brand" href="#"> OCSHION</div>
                     </div>
                     <div id="navbar" className="collapse navbar-collapse">
                         <ul className="nav navbar-nav">
@@ -29,7 +29,7 @@ function Header(props){
                 </div>
             </nav>
             <div className="header">
-                <h1> Welcome to OKSHION, {props.name} ,<p></p> may the bids be ever in your favor</h1>
+                <h1> Welcome to OCSHION, {props.name} ,<p></p> may the bids be ever in your favor</h1>
                 <Link to="/viewListings/" className='btn btn-default'>View List</Link>
                 <Link to={`/listitem`} className='btn btn-default'> List an Item</Link>
                 <Login />

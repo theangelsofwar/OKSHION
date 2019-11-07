@@ -38,7 +38,7 @@ class Listings extends React.Component{
                                 <img src={item.picture_url} />
                                 <h2 onClick={e => this.viewListing(item.id)}>{item.name}</h2>
                                 <p> Current bid: {item.current_bid}</p>
-                                <p> Aution finished {new Date(item.finish_date).toLocaleTimeString('en-GB')+'\n' +new Date(item.finish_date).toLocaleDateString('en-GB')}</p>
+                                <p> Auction finished {new Date(item.finish_date).toLocaleTimeString('en-GB')+'\n' +new Date(item.finish_date).toLocaleDateString('en-GB')}</p>
                             </div>
                         )
                     })}
