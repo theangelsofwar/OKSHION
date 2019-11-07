@@ -14923,7 +14923,7 @@ var App = function (_React$Component) {
                 'div',
                 { className: 'sss' },
                 _react2.default.createElement(_Header2.default, { routeProps: this.props }),
-                _react2.default.createElement(_reactRouterDom.Route, { path: './viewListings/', compoennt: _Listings2.default }),
+                _react2.default.createElement(_reactRouterDom.Route, { path: './viewListings/', component: _Listings2.default }),
                 _react2.default.createElement(_reactRouterDom.Route, { path: '/viewListing/:id', component: _ViewItemAndBid2.default }),
                 _react2.default.createElement(_reactRouterDom.Route, { path: '/listitem', component: _ListAnItem2.default })
             );
