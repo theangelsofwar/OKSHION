@@ -14075,7 +14075,7 @@ var AddBid = function (_React$Component) {
 
         _this.state = {
             id: props.bidItem,
-            user_id: 5,
+            user_id: 6,
             bidAmount: 0
         };
         _this.filedChanged = _this.filedChanged.bind(_this);
@@ -14118,6 +14118,18 @@ var AddBid = function (_React$Component) {
                 _react2.default.createElement(
                     'form',
                     null,
+                    _react2.default.createElement(
+                        'span',
+                        null,
+                        ' ',
+                        _react2.default.createElement(
+                            'button',
+                            null,
+                            ' Place Bid'
+                        ),
+                        ' ',
+                        _react2.default.createElement('input', { type: 'text', name: 'lname' })
+                    ),
                     _react2.default.createElement(
                         'div',
                         { className: 'col-md-6' },
@@ -14545,10 +14557,15 @@ var Listings = function (_React$Component) {
                                 Listings
                             ),
                             _react2.default.createElement(
-                                'p',
+                                'button',
                                 null,
-                                ' Current bid: ',
-                                item.current_bid
+                                ' ',
+                                _react2.default.createElement(
+                                    'p',
+                                    null,
+                                    ' Current bid: ',
+                                    item.current_bid
+                                )
                             ),
                             _react2.default.createElement(
                                 'p',

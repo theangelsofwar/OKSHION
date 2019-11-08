@@ -8,7 +8,7 @@ class AddBid extends React.Component{
         super(props)
         this.state={
             id: props.bidItem,
-            user_id:5,
+            user_id:6,
             bidAmount:0
         }
         this.filedChanged=this.filedChanged.bind(this)
@@ -38,6 +38,7 @@ class AddBid extends React.Component{
         return (
             <div> 
                 <form>
+                   <span> <button> Place Bid</button> <input type="text" name="lname"></input></span>
                     <div className="col-md-6">
                         <input type='text' placeholder='Bid Amount' name='amount' onChange={this.fieldChanged} className='form-control'/>
                     </div>

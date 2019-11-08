@@ -14,7 +14,7 @@ const listings = [
   {
     id: 2,
     name: "Kanye's Listing",
-    description: 'This is another description',
+    description: 'Element',
     picture_url: 'https://i.pinimg.com/564x/9a/90/97/9a909774449dbb636342b4ded8ebb420.jpg',
     starting_bid: 50,
     user_id: 2,
@@ -76,6 +76,17 @@ const listings = [
     start_date: new Date(d.getFullYear(), d.getMonth(), d.getDate() - 4, d.getHours(), d.getMinutes(), d.getSeconds()),
     finish_date: new Date(d.getFullYear(), d.getMonth(), d.getDate(), d.getHours() - 12, d.getMinutes() + 10, d.getSeconds()),
     winner: 4
+  },
+  {
+    id: 8,
+    name: 'Listing Karl',
+    description: 'Congratulations Zane',
+    picture_url: 'https://i.pinimg.com/564x/00/10/e3/0010e34c8e00884614be11fb77a6586b.jpg',
+    starting_bid: 60,
+    user_id: 3,
+    start_date: new Date(d.getFullYear(), d.getMonth(), d.getDate() - 4, d.getHours(), d.getMinutes(), d.getSeconds()),
+    finish_date: new Date(d.getFullYear(), d.getMonth(), d.getDate(), d.getHours() - 12, d.getMinutes() + 10, d.getSeconds()),
+    winner: 4
   }
 ]
 
@@ -115,6 +126,7 @@ const users = [
     password: 'Zane',
     email: 'zane@zane.zan.e'
   }
+  
 ]
 
 const bids = [
@@ -154,10 +166,38 @@ const bids = [
     bid_date: new Date(d.getFullYear(), d.getMonth(), d.getDate() - 2, d.getHours(), d.getMinutes() - 5, d.getSeconds())
   },
   {
-    id: 6,
+    id: 2,
     listing_id: 7,
     user_id: 4,
     bid_amount: 100,
+    bid_date: new Date(d.getFullYear(), d.getMonth(), d.getDate() - 1, d.getHours(), d.getMinutes() - 5, d.getSeconds())
+  },
+  {
+    id: 4,
+    listing_id: 3,
+    user_id: 4,
+    bid_amount: 1000,
+    bid_date: new Date(d.getFullYear(), d.getMonth(), d.getDate() - 1, d.getHours(), d.getMinutes() - 5, d.getSeconds())
+  },
+  {
+    id: 4,
+    listing_id: 5,
+    user_id: 4,
+    bid_amount: 54000,
+    bid_date: new Date(d.getFullYear(), d.getMonth(), d.getDate() - 1, d.getHours(), d.getMinutes() - 5, d.getSeconds())
+  },
+  {
+    id: 2,
+    listing_id: 6,
+    user_id: 4,
+    bid_amount: 9000,
+    bid_date: new Date(d.getFullYear(), d.getMonth(), d.getDate() - 1, d.getHours(), d.getMinutes() - 5, d.getSeconds())
+  },
+  {
+    id: 3,
+    listing_id: 8,
+    user_id: 4,
+    bid_amount: 19000,
     bid_date: new Date(d.getFullYear(), d.getMonth(), d.getDate() - 1, d.getHours(), d.getMinutes() - 5, d.getSeconds())
   }
 ]
