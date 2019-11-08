@@ -3,11 +3,12 @@ const router=express.Router()
 
 const db=require('./db')
 
-router.get('./listings',function(req,res){
-    db.getCurrentListings((error,listings) => {
+router.get('/viewListings',function(req,res) {
+    db.getCurrentListings((error, listings) => {
         if(error){
             return res.json({error})
         }
+        console.log("in routes.js line 11"+"res"+res);
         return res.json({listings})
     })
 })
@@ -22,7 +23,7 @@ router.get('/expired',function(req,res){
     })
 })
 
-router.get('/user/:userId/listings',function(req,res){
+router.get('/user/:userId/listings',function(req,res) {
     db.getUserListings(req.params.userId,(error,listings) => {
         if(error){
             return res.json({error})

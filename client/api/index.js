@@ -1,12 +1,17 @@
 import request from 'superagent'
+// const express=require("express")
+// import superagent from 'superagent'
+// const router=express.Router()
+// const superagent=require('superagent')
 
 export function apiGetAllListings(cb){
-    request.get('/listings')
+    request.get(`/viewListings`)
     .end((err,res)=>{
         if(err){
             cb(err.message)
             return
         }
+        console.log("in index step 1  api line 14 front"+"res"+res)
         const result=res.body
         cb(null,result)
     })
@@ -29,7 +34,7 @@ export function apiPostListing(obj,cb){
     request.post(`/listings/add/${id}`)
     .send(obj)
     .end((err,res) =>{
-        console.log(res,'red')
+        console.log(res,'res in index.js line 37 of api folder')
             if(err) cb(err)
             const result=res.body.listingId
             cb(null,result)
@@ -41,7 +46,7 @@ export function apiPostBid(obj,cb){
     const listingId=obj.id
     request.post(`/listings/bid/${listingId}/${userId}`)
     .send(obj)
-    .end((err,res) =>{
+    .end((err , res) => {
         if(err) cb(err)
         const result=res.body.bidId
         cb(null,result)
@@ -49,7 +54,7 @@ export function apiPostBid(obj,cb){
 }
 
 export function apiCheckLogin(obj,cb){
-    request.post('/login')
+    request.post(`/login`)
     .send(obj)
     .end((err,res)=>{
         if(err) console.log("this error",err)

@@ -2,7 +2,7 @@ import React from 'react'
 import {connect} from 'react-redux'
 
 function Listings (props){
-    console.log(props)
+    console.log("in Listings.js line 5"+props)
     return(
         <div> 
             <button onClick={() => {test(props)}}> test </button>
@@ -11,10 +11,10 @@ function Listings (props){
 }
 
 function test (props){
-    props.history.push('/test')
+    props.history.push({pathname: `{/viewListings}`})
 }
 
-const mapStateToProps=(state) => {
+const mapStateToProps= (state) => {
     return {
         words:state.words
     }

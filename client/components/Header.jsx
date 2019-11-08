@@ -2,10 +2,10 @@ import {connect} from 'react-redux'
 import React from 'react'
 import {Link} from 'react-router-dom'
 import Login from './Login'
-
+//link to react router dom to routers
 
 function Header(props){
-    console.log(props)
+    // console.log(props)
 
 
     return (
@@ -30,8 +30,8 @@ function Header(props){
             </nav>
             <div className="header">
                 <h1> Welcome to OCSHION user: {props.name} ,<p></p> may the bids be ever in your favor</h1>
-                <Link to="/viewListings/" className='btn btn-default'>View List</Link>
-                <Link to={`/listitem`} className='btn btn-default'> List an Item</Link>
+                <Link to={`/viewListings`} className='btn btn-default'> View Bidding List</Link>
+                <Link to={`/listitem`} className='btn btn-default'> List an Item for Auction</Link>
                 <Login />
             </div>
         </div>

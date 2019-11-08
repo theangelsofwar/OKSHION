@@ -4067,19 +4067,25 @@ var _superagent2 = _interopRequireDefault(_superagent);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
+// const express=require("express")
+// import superagent from 'superagent'
+// const router=express.Router()
+// const superagent=require('superagent')
+
 function apiGetAllListings(cb) {
-    _superagent2.default.get('/listings').end(function (err, res) {
+    _superagent2.default.get("/viewListings").end(function (err, res) {
         if (err) {
             cb(err.message);
             return;
         }
+        console.log("in index step 1  api line 14 front" + "res" + res);
         var result = res.body;
         cb(null, result);
     });
 }
 
 function apiGetListing(id, cb) {
-    _superagent2.default.get('/listing/' + id).end(function (err, res) {
+    _superagent2.default.get("/listing/" + id).end(function (err, res) {
         if (err) {
             cb(err.message);
             return;
@@ -4091,8 +4097,8 @@ function apiGetListing(id, cb) {
 
 function apiPostListing(obj, cb) {
     var id = obj.user_id;
-    _superagent2.default.post('/listings/add/' + id).send(obj).end(function (err, res) {
-        console.log(res, 'red');
+    _superagent2.default.post("/listings/add/" + id).send(obj).end(function (err, res) {
+        console.log(res, 'res in index.js line 37 of api folder');
         if (err) cb(err);
         var result = res.body.listingId;
         cb(null, result);
@@ -4102,7 +4108,7 @@ function apiPostListing(obj, cb) {
 function apiPostBid(obj, cb) {
     var userId = obj.user_id;
     var listingId = obj.id;
-    _superagent2.default.post('/listings/bid/' + listingId + '/' + userId).send(obj).end(function (err, res) {
+    _superagent2.default.post("/listings/bid/" + listingId + "/" + userId).send(obj).end(function (err, res) {
         if (err) cb(err);
         var result = res.body.bidId;
         cb(null, result);
@@ -4110,7 +4116,7 @@ function apiPostBid(obj, cb) {
 }
 
 function apiCheckLogin(obj, cb) {
-    _superagent2.default.post('/login').send(obj).end(function (err, res) {
+    _superagent2.default.post("/login").send(obj).end(function (err, res) {
         if (err) console.log("this error", err);
         var result = res.body;
         console.log(res);
@@ -13942,6 +13948,9 @@ var _App2 = _interopRequireDefault(_App);
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 var getRouter = exports.getRouter = function getRouter() {
+    // Router.render((<HashRouter>
+    //     <App />
+    // </HashRouter>), document.getElementById('root'))
     return _react2.default.createElement(
         _reactRouterDom.HashRouter,
         null,
@@ -14163,8 +14172,11 @@ var _Login2 = _interopRequireDefault(_Login);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
+//link to react router dom to routers
+
 function Header(props) {
-    console.log(props);
+    // console.log(props)
+
 
     return _react2.default.createElement(
         'div',
@@ -14221,13 +14233,13 @@ function Header(props) {
             ),
             _react2.default.createElement(
                 _reactRouterDom.Link,
-                { to: '/viewListings/', className: 'btn btn-default' },
-                'View List'
+                { to: '/viewListings', className: 'btn btn-default' },
+                ' View Bidding List'
             ),
             _react2.default.createElement(
                 _reactRouterDom.Link,
                 { to: '/listitem', className: 'btn btn-default' },
-                ' List an Item'
+                ' List an Item for Auction'
             ),
             _react2.default.createElement(_Login2.default, null)
         )
@@ -14324,7 +14336,11 @@ var ListAnItem = function (_React$Component) {
       newListing.user_id = this.props.user_id;
       console.log(newListing, 'new listing');
       (0, _api.apiPostListing)(newListing, function (err, listingId) {
-        _this2.props.history.push('/viewlisting/' + listingId);
+        _this2.props.history.push({
+          pathname: '/viewlisting/${listingId}',
+          search: '?query=abc',
+          state: { detail: _this2.state }
+        });
       });
     }
   }, {
@@ -14400,7 +14416,7 @@ var ListAnItem = function (_React$Component) {
               { className: 'form-buttom', onClick: function onClick(e) {
                   return _this4.submitListing(e);
                 } },
-              ' Add Listing'
+              ' Add Listing '
             )
           )
         )
@@ -14418,12 +14434,16 @@ function listAnItem(props) {
     { onClick: function onClick() {
         click(props);
       } },
-    'fdg'
+    'Khal Drogo'
   );
 }
 
 function click(props) {
-  props.history.push('./tyest');
+  props.history.push({
+    pathname: '/listitem',
+    search: '?query=abc',
+    state: { detail: this.state }
+  });
 }
 
 function mapStateToProps(state) {
@@ -14461,6 +14481,7 @@ function _possibleConstructorReturn(self, call) { if (!self) { throw new Referen
 
 function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
 
+//our imported superagent and Hash React Router acts as a controller middleware but is client side
 var Listings = function (_React$Component) {
     _inherits(Listings, _React$Component);
 
@@ -14472,7 +14493,7 @@ var Listings = function (_React$Component) {
         _this.state = {
             items: []
         };
-        _this.viewListing = _this.viewListing.bind(_this);
+        _this.viewListings = _this.viewListings.bind(_this);
         return _this;
     }
 
@@ -14482,17 +14503,18 @@ var Listings = function (_React$Component) {
             var _this2 = this;
 
             (0, _api.apiGetAllListings)(function (err, items) {
-                console.log(itmems);
+                console.log(items);
                 _this2.setState({
                     items: items.listings
                 });
             });
-            console.log(this.state);
+            console.log("in component did mount of Listings.jsx line 20 with state" + this.state);
         }
     }, {
-        key: 'viewListing',
-        value: function viewListing(id) {
-            this.props.history.push('./listings');
+        key: 'viewListings',
+        value: function viewListings() {
+            this.props.history.push({ pathname: '{/viewListings}', search: '?query=abc', state: { detail: this.state } });
+            console.log(this.props.history + "history Listings line 25");
         }
     }, {
         key: 'render',
@@ -14505,7 +14527,7 @@ var Listings = function (_React$Component) {
                 _react2.default.createElement(
                     'h2',
                     null,
-                    ' CurrentListings'
+                    ' Current Listings '
                 ),
                 _react2.default.createElement(
                     'div',
@@ -14513,14 +14535,14 @@ var Listings = function (_React$Component) {
                     this.state.items.map(function (item, key) {
                         return _react2.default.createElement(
                             'div',
-                            { key: key, className: 'listing' },
+                            { key: key, className: 'listings' },
                             _react2.default.createElement('img', { src: item.picture_url }),
                             _react2.default.createElement(
                                 'h2',
                                 { onClick: function onClick(e) {
-                                        return _this3.viewListing(item.id);
+                                        return _this3.viewListings;
                                     } },
-                                item.name
+                                Listings
                             ),
                             _react2.default.createElement(
                                 'p',
@@ -14904,6 +14926,8 @@ function _possibleConstructorReturn(self, call) { if (!self) { throw new Referen
 
 function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
 
+// import './public/main.css'
+
 var App = function (_React$Component) {
     _inherits(App, _React$Component);
 
@@ -14912,7 +14936,7 @@ var App = function (_React$Component) {
 
         var _this = _possibleConstructorReturn(this, (App.__proto__ || Object.getPrototypeOf(App)).call(this, props));
 
-        console.log(props);
+        console.log("in App container line 12 props=" + props);
         return _this;
     }
 
@@ -14921,9 +14945,9 @@ var App = function (_React$Component) {
         value: function render() {
             return _react2.default.createElement(
                 'div',
-                { className: 'app' },
+                { id: 'app', className: 'sss' },
                 _react2.default.createElement(_Header2.default, { routeProps: this.props }),
-                _react2.default.createElement(_reactRouterDom.Route, { path: './viewListings/', component: _Listings2.default }),
+                _react2.default.createElement(_reactRouterDom.Route, { path: '/viewListings', component: _Listings2.default }),
                 _react2.default.createElement(_reactRouterDom.Route, { path: '/viewListing/:id', component: _ViewItemAndBid2.default }),
                 _react2.default.createElement(_reactRouterDom.Route, { path: '/listitem', component: _ListAnItem2.default })
             );

@@ -11,7 +11,7 @@ const CLOUDINARY_UPLOAD_URL='https://api.cloudinary.com/v1_1/partmatch/upload'
 class ListAnItem extends React.Component{
   constructor(props){
     super(props)
-    const d=new Date()
+    const d= new Date()
     this.state={
       name: '',
       description: '',
@@ -37,8 +37,13 @@ class ListAnItem extends React.Component{
     const newListing=this.state
     newListing.user_id=this.props.user_id
     console.log(newListing,'new listing')
-    apiPostListing(newListing,(err,listingId) => {
-      this.props.history.push(`/viewlisting/${listingId}`)
+    apiPostListing(newListing, (err,listingId) => {
+      this.props.history.push({
+        pathname: '/viewlisting/${listingId}',
+        search: '?query=abc',
+        state: { detail: this.state }
+      })
+      
     })
   }
 
@@ -84,7 +89,7 @@ class ListAnItem extends React.Component{
               <div> 
                 <h4> Uploaded File</h4>
               </div>}
-              <button className='form-buttom' onClick={e => this.submitListing(e)}> Add Listing</button>
+              <button className='form-buttom' onClick={e => this.submitListing(e)}> Add Listing </button>
 
             </div>
           </form>
@@ -96,12 +101,17 @@ class ListAnItem extends React.Component{
 function listAnItem(props){
   console.log(props)
   return(
-    <button onClick={()=> {click(props)}}>fdg</button>
+    <button onClick={()=> {click(props)}}>Khal Drogo</button>
   )
 }
 
 function click(props){
-  props.history.push('./tyest')
+  props.history.push({
+    pathname: '/listitem',
+    search: '?query=abc',
+    state: { detail: this.state }
+  })
+
 }
 
 function mapStateToProps(state){

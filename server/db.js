@@ -23,6 +23,7 @@ function getAllListings(callback){
         if(listing.number_of_bids>0){
             listing.current_bid=listing.bids.sort((a,b) => b.bid_amount-a.bid_amount)[0].bid_amount
         }
+        console.log("in db.js line 26, listings is :"+listing)
         return listing
     })
     return callback(null,listings)
