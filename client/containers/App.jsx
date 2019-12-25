@@ -5,12 +5,15 @@ import Header from '../components/Header'
 import ListAnItem from '../components/ListAnItem'
 import ViewItemAndBid from '../components/ViewItemAndBid'
 // import './public/main.css'
-
+import Conditional from "./Conditional"
 
 class App extends React.Component{
     constructor(props){
         super(props)
         this.state={
+        isLoading: false,
+        count:0,
+        color: "",
         isSold: false,
         items: data
         }
@@ -18,8 +21,16 @@ class App extends React.Component{
         this.handleChange = this.handleChange.bind(this)
     }
 
-    componentDidMount(){
+    static getDerivedStateFromProps(props,state){
 
+    }
+
+    componentDidMount(){
+        setTimeout(() => {
+            this.setState({
+                isLoading: false
+            },1500)
+        })
     }
 
     componentWillReceiveProps(nextProps){
@@ -28,8 +39,19 @@ class App extends React.Component{
         }
     }
 
-    shouldComponentUpdate(){
-        
+    shouldComponentUpdate(nextProps, nextState){
+
+    }
+
+    componentDidUpdate(prevProps,prevState){
+        if(prevState.count !==this.state.count){
+            const newColor= randomcolor()
+            this.setState({ color: newColor })
+        }
+    }
+
+    componentWillUnmount(){
+
     }
 
     handleChange(id){
@@ -52,6 +74,7 @@ class App extends React.Component{
     render(){
         return (
             <div id="root" className="app">
+                <Conditional isLoading={this.state.isLoading}/>
                 <Header routeProps={this.props}/>
                 <Route path={`/viewListings`} component={Listings}/>
                 <Route path={`/viewListing/:id`} component={ViewItemAndBid}/>
