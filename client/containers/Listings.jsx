@@ -2,6 +2,16 @@ import React from 'react'
 import {connect} from 'react-redux'
 
 function Listings (props){
+    constructor(){
+        super()
+        this.state={
+
+        }
+        this.onClick=this.onClick.bind(this);
+    }
+
+
+
     console.log("in Listings.js line 5"+props)
     return(
         <div> 

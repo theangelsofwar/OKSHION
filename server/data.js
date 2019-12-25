@@ -3,7 +3,7 @@ const listings = [
   {
     id: 1,
     name: "NanoFiber Bag",
-    description: 'This Purse is Fresh -On White',
+    description: 'This Purse is Fresh Off White',
     picture_url: 'https://i.pinimg.com/564x/18/07/e3/1807e3d1ed14fc47a072f997286fa6c4.jpg',
     starting_bid: 1000,
     user_id: 1,

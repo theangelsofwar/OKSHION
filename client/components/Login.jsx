@@ -12,15 +12,16 @@ class Login extends React.Component{
         this.state={
             userName:'',
             password:'',
+            isLoggedIn: true,
         }
     }
-    handleChange(evt){
+    handleChange(event){
         this.setState({
-            [evt.target.name]:evt.target.value
+            [event.target.name]:event.target.value
         })
     }
-    handleSubmit(evt){
-        evt.preventDefault()
+    handleSubmit(event){
+        event.preventDefault()
         apiCheckLogin(this.state,(err,res) => {
             if(err) return console.log(err)
             console.log(res)
@@ -32,8 +33,13 @@ class Login extends React.Component{
     }
 
     render(){
+        let wordDisplay="You are currently not logged in";
+        if(this.state.isLoggedIn){
+            wordDispay="You are currently logged in as";
+        }
         return(
             <div>
+               <h1>{wordDisplay} </h1> 
                 <form onSubmit={this.handleSubmit.bind(this)}>
                     <input type="text"placeholder="username" name="userName" onChange={this.handleChange.bind(this)}/>
                     <input type="password" placeholder="password" name="password" onChange={this.handleChange.bind(this)} />
