@@ -6,10 +6,10 @@ import Login from './Login'
 
 function Header(props){
     // console.log(props)
-
-
     return (
+        
         <div className="header-master">
+            
             <nav className="navbar navbar-inverse navbar-fixed-top">
                 <div className="container">
                     <div className="navbar-header">
@@ -29,7 +29,12 @@ function Header(props){
                 </div>
             </nav>
             <div className="header">
-                <h1> Welcome to OCSHION user: {props.name} ,<p></p> may the bids be ever in your favor</h1>
+                <h1> Welcome to KARL user: {props.name} ,<p></p> may the bids be ever in your favor</h1>
+                <header> 
+                <img 
+                    src="http://www.pngall.com/wp-content/uploads/2016/05/Trollface.png"
+                    alt="Problem?" />
+                         </header>
                 <Link to={`/viewListings`} className='btn btn-default'> View Bidding List</Link>
                 <Link to={`/listitem`} className='btn btn-default'> List an Item for Auction</Link>
                 <Login />

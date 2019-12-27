@@ -1,7 +1,8 @@
 # OKSHION
 MERN Fullstack App
- 
-My blogpost on this journey:  https://angiechangpagne.wordpress.com/2019/11/06/bidding-and-betting-are-kind-of-the-same-thing/
+
+React Native
+React Typescript, Redux
 
 ![Screen Shot 2019-11-08 at 8 15 40 AM](https://user-images.githubusercontent.com/43552993/68493579-936f7700-0201-11ea-9a46-4f426a1d644d.png)
 ![Screen Shot 2019-11-08 at 8 16 07 AM](https://user-images.githubusercontent.com/43552993/68493589-9702fe00-0201-11ea-9212-584de87cc5bf.png)

@@ -1,7 +1,7 @@
 import React from 'react'
 import AddBid from './AddBid'
 import {apiGetListing} from '../api/'
-
+//incorporate item on hover
 export default class ViewItemAndBid extends React.Component{
     constructor(props){
         super(props)
